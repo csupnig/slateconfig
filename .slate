@@ -1,0 +1,27 @@
+# Screen dimensions
+alias sox screenOriginX
+alias soy screenOriginY
+alias ssx screenSizeX
+alias ssy screenSizeY
+
+# Positions  x;y                             x;y
+alias right  ${sox}+${ssx}/2;${soy}          ${ssx}/2;${ssy}
+alias left   ${sox};${soy}                   ${ssx}/2;${ssy}
+alias rightupper ${sox}+${ssx}/2;${soy}		${ssx}/2;${ssy}/2
+alias rightlower ${sox}+${ssx}/2;${ssy}/2	${ssx}/2;${ssy}
+alias leftupper  ${sox};${soy}			${ssx}/2;${ssy}/2
+alias leftlower	${sox};${ssy}/2			${ssx}/2;${ssy}
+alias full   ${sox};${soy}                   ${ssx};${ssy}
+alias center ${sox}+${ssx}/8;${soy}+${ssy}/8 ${ssx}*.75;${ssy}*.75
+
+# Bindings
+bind up:ctrl,alt,shift throw next resize
+bind down:ctrl,alt,shift throw previous resize
+bind up:ctrl,alt    move ${full}
+bind down:ctrl,alt  move ${center}
+bind right:ctrl,alt move ${right}
+bind left:ctrl,alt  move ${left}
+bind l:ctrl,alt move ${rightupper}
+bind .:ctrl,alt move ${rightlower}
+bind k:ctrl,alt  move ${leftupper}
+bind ,:ctrl,alt  move ${leftlower}
